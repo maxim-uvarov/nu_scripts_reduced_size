@@ -1,6 +1,5 @@
-#!/usr/bin/env nu
-
-def main [] {
+# Preview what your termnal theme looks like
+def 'preview terminal' [] {
     def preview [attr: string] {
         let color = $in
         $"(ansi -e {fg: $color attr: $attr})($color)(ansi reset)"
@@ -30,3 +29,5 @@ def main [] {
         rgb_bold: ($color.rgb | preview b)
     }}
 }
+
+preview terminal
